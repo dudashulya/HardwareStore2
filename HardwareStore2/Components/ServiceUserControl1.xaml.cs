@@ -23,6 +23,7 @@ namespace HardwareStore2.Components
     public partial class ServiceUserControl1 : UserControl
     {
         public  ServiceUserControl1(Product product  )
+
         {
             InitializeComponent();
             TttleTB.Text = product.Title;
