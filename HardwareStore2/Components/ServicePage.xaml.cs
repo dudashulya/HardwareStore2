@@ -1,5 +1,4 @@
-﻿
-using HardwareStore2.Base;
+﻿using HardwareStore2.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,18 +17,18 @@ using System.Windows.Shapes;
 namespace HardwareStore2.Components
 {
     /// <summary>
-    /// Логика взаимодействия для ServiceUserControl1.xaml
+    /// Логика взаимодействия для ServicePage.xaml
     /// </summary>
-    public partial class ServiceUserControl1 : UserControl
+    public partial class ServicePage : Page
     {
-        public  ServiceUserControl1(Product product  )
+        public ServicePage()
         {
             InitializeComponent();
-            TttleTB.Text = product.Title;
-            CostDiscountTB.Text = product.DiscountStr;
-            CostTB.Text = product.Cost.ToString("0");
-            //CostTb.Visibility = service.Visibility;
-            //MainBorder.Background = service.ColorServ;
+            
+                
+            
         }
+        
+        //ServicesWp.Children.Add(new ServiceUserControl1(product));
     }
 }

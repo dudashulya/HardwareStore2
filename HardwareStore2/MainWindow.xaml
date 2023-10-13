@@ -15,7 +15,9 @@
         </Grid.RowDefinitions>
         <Rectangle Fill="OrangeRed" Grid.ColumnSpan="2"></Rectangle>
         <TextBlock x:Name="TitleTB" Grid.Column="1" HorizontalAlignment="Center" FontFamily="Arial" 
-                   FontSize="30" FontStyle="Italic" Foreground="White" VerticalAlignment="Center"> Hardware Store</TextBlock>
+                   FontSize="30" FontStyle="Italic" Foreground="White" 
+                   VerticalAlignment="Center"> Hardware Store</TextBlock>
+        <Frame  Grid.Row="1" x:Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
 
     </Grid>
 </Window>

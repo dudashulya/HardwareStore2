@@ -5,33 +5,43 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HardwareStore2.Components"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="200">
+             d:DesignHeight="350" d:DesignWidth="200">
     <Border x:Name="MainBorder" BorderBrush="LightGray" BorderThickness="2" Margin="2" Width="200">
         <Grid Margin="5">
             <Grid.RowDefinitions>
+
                 <RowDefinition Height="8*"/>
-                <RowDefinition Height="7*"/>
-                <RowDefinition Height="7*"/>
-                <RowDefinition Height="5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="15*"/>
-                <ColumnDefinition Width="31*"/>
-            </Grid.ColumnDefinitions>
-            <Image Height="110"  x:Name="ImageIMG"
-               Grid.RowSpan="4" Source="/Resources/school_logo.png"></Image>
-
-            <TextBlock Grid.Column="1" x:Name="TttleTB"></TextBlock>
-
-            <StackPanel Grid.Row=" 1" Grid.Column="1" Orientation="Horizontal">
-                <TextBlock x:Name="CostTb" TextDecorations="Strikethrough" ></TextBlock>
-                <TextBlock  x:Name="CostTimeTB"></TextBlock>
+         
+            <Image Height="140"  x:Name="ImageIMG" Source="/Resources/noroot.png"></Image>
+            <TextBlock Grid.Row=" 1" x:Name="TttleTB"></TextBlock>
+            
+            <StackPanel Grid.Row="2"  Orientation="Horizontal">
+               
+                <Image x:Name="StarIMG" Source="/Resources/star.png"></Image>
+                <TextBlock x:Name="GradeTb"  ></TextBlock>
+               
+                <TextBlock x:Name="ReviewsTb"></TextBlock>
             </StackPanel>
 
-            <TextBlock Grid.Row=" 2" Grid.Column="1"  x:Name="DiscountTB"></TextBlock>
-            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0">
-                <Button x:Name="EditBTN">Редактировать</Button>
-                
+            <StackPanel Grid.Row="3">
+                <TextBlock  x:Name="CostDiscountTB"></TextBlock> 
+                <TextBlock  x:Name="CostTB" TextDecorations="Strikethrough"></TextBlock>
+            </StackPanel>
+
+            
+            <StackPanel Orientation="Horizontal" Grid.Row="4">
+                <Image Height="50"  x:Name="BasketIMG"
+               Grid.RowSpan="2" Source="/Resources/basket.png"></Image>
+                <Image Height="50"  x:Name="HeartIMG"
+               Grid.RowSpan="2" Source="/Resources/heart.png"></Image>
+                <Image Height="50"  x:Name="ReviewsIMG"
+               Grid.RowSpan="2" Source="/Resources/reviews.png"></Image>
+
             </StackPanel>
         </Grid>
     </Border>
