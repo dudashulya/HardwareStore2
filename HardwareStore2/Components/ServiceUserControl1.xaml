@@ -28,7 +28,7 @@
                 <TextBlock x:Name="ReviewsTb"></TextBlock>
             </StackPanel>
 
-            <StackPanel Grid.Row="3">
+            <StackPanel Grid.Row="3" Orientation="Horizontal">
                 <TextBlock  x:Name="CostDiscountTB"></TextBlock> 
                 <TextBlock  x:Name="CostTB" TextDecorations="Strikethrough"></TextBlock>
             </StackPanel>
