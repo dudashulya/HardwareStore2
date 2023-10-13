@@ -26,7 +26,7 @@ namespace HardwareStore2.Components
         {
             InitializeComponent();
             TttleTB.Text = product.Title;
-            CostDiscountTB.Text = product.DiscountStr;
+            //CostDiscountTB.Text = product.Discount;
             CostTB.Text = product.Cost.ToString("0");
             //CostTb.Visibility = service.Visibility;
             //MainBorder.Background = service.ColorServ;

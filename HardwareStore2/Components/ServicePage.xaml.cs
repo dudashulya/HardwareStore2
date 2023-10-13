@@ -24,11 +24,14 @@ namespace HardwareStore2.Components
         public ServicePage()
         {
             InitializeComponent();
-            
-                
+            IEnumerable<Product> List = App.db.Product;
+            foreach(Product Item in List)
+            {
+                ServicesWp.Children.Add(new ServiceUserControl1(Item));
+            } 
             
         }
         
-        //ServicesWp.Children.Add(new ServiceUserControl1(product));
+        //
     }
 }

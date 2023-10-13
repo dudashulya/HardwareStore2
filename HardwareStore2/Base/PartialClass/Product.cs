@@ -13,7 +13,7 @@ namespace HardwareStore2.Base
         
         
             public decimal CostDiscountTB
-        {
+            {
                 get
                 {
                     if (Discount == null)
@@ -35,26 +35,7 @@ namespace HardwareStore2.Base
 
             }
 
-            public string DiscountStr
-            {
-                get
-                {
-                    if (Discount == null)
-                        return null;
-                    else
-                        return $"* скидка {Discount}%";
-                }
-            }
-            public System.Windows.Media.Brush ColorServ
-            {
-                get
-                {
-                    if (Discount == null)
-                        return new SolidColorBrush(Colors.White);
-                    else
-                        return new SolidColorBrush(Colors.LightGreen);
-
-                }
-            }
+            
+           
         }
 }

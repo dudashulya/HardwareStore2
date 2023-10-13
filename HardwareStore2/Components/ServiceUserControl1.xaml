@@ -22,7 +22,7 @@
             
             <StackPanel Grid.Row="2"  Orientation="Horizontal">
                
-                <Image x:Name="StarIMG" Source="/Resources/star.png"></Image>
+                <Image x:Name="StarIMG" Height="20" Source="/Resources/star.png"></Image>
                 <TextBlock x:Name="GradeTb"  ></TextBlock>
                
                 <TextBlock x:Name="ReviewsTb"></TextBlock>
@@ -35,11 +35,11 @@
 
             
             <StackPanel Orientation="Horizontal" Grid.Row="4">
-                <Image Height="50"  x:Name="BasketIMG"
+                <Image Height="30" Margin=" 10" x:Name="BasketIMG"
                Grid.RowSpan="2" Source="/Resources/basket.png"></Image>
-                <Image Height="50"  x:Name="HeartIMG"
+                <Image Height="30" Margin=" 10"  x:Name="HeartIMG"
                Grid.RowSpan="2" Source="/Resources/heart.png"></Image>
-                <Image Height="50"  x:Name="ReviewsIMG"
+                <Image Height="30" Margin="15" x:Name="ReviewsIMG"
                Grid.RowSpan="2" Source="/Resources/reviews.png"></Image>
 
             </StackPanel>
