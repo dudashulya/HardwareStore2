@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HardwareStore2.Base;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,6 @@ namespace HardwareStore2
     /// </summary>
     public partial class App : Application
     {
+        public static HardwareStoreEntities db = new HardwareStoreEntities ();
     }
 }
