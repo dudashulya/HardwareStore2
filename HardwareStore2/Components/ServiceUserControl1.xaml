@@ -23,9 +23,7 @@
             <StackPanel Grid.Row="2"  Orientation="Horizontal">
                
                 <Image x:Name="StarIMG" Height="20" Source="/Resources/star.png"></Image>
-                <TextBlock x:Name="GradeTb"  ></TextBlock>
-               
-                <TextBlock x:Name="ReviewsTb"></TextBlock>
+                <TextBlock x:Name="FeedbackTb"  ></TextBlock>
             </StackPanel>
 
             <StackPanel Grid.Row="3" Orientation="Horizontal">

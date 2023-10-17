@@ -29,8 +29,11 @@ namespace HardwareStore2.Components
             TttleTB.Text = product.Title;
             CostDiscountTB.Text = product.CostDiscountTB.ToString("N0") + " Р ";
             CostTB.Text = product.Cost.ToString("N0");
-            //CostTb.Visibility = service.Visibility;
+            FeedbackTb.Text = product.FeedbackText;
+
+            CostTB.Visibility = product.Visibility;
             //MainBorder.Background = service.ColorServ;
         }
+        
     }
 }

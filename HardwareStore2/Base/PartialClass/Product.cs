@@ -16,7 +16,7 @@ namespace HardwareStore2.Base
             {
                 get
                 {
-                    if (Discount == null)
+                    if (Discount == 0)
                         return Cost;
                     else
                         return Cost - (Cost * (decimal)Discount / 100);
@@ -27,15 +27,28 @@ namespace HardwareStore2.Base
             {
                 get
                 {
-                    if (Discount == null)
+                    if (Discount == 0)
                         return Visibility.Collapsed;
                     else
                         return Visibility.Visible;
                 }
 
             }
+            
+            public string FeedbackText
+        {
+            get
+            {
+                double sum = 0;
+                foreach(var item in Feedback)
+                {
+                    sum = sum + item.Evaluation;
+                }
+                return $"{(sum / Feedback.Count()).ToString("N2")}   {Feedback.Count()} отзыв";
+            }
+        }
 
             
            
-        }
+    }
 }
