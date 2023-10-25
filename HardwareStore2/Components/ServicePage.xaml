@@ -9,7 +9,27 @@
       Title="ServicePage">
 
     <Grid>
-        <ScrollViewer HorizontalScrollBarVisibility="Disabled" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="90*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <ComboBox Height="40" x:Name="ShortCB" SelectionChanged="ShortCB_SelectionChanged" >
+                <ComboBoxItem>По умолчанию</ComboBoxItem>
+                <ComboBoxItem>По возрастанию</ComboBoxItem>
+                <ComboBoxItem>По убыванию</ComboBoxItem>
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">По скидке</TextBlock>
+            <ComboBox Name ="DiscountFilterCb" SelectionChanged="DiscountFilterCb_SelectionChanged"  >
+                <ComboBoxItem>Все</ComboBoxItem>
+                <ComboBoxItem>от 0% до 2%</ComboBoxItem>
+                <ComboBoxItem>от 2% до 5%</ComboBoxItem>
+                <ComboBoxItem>от 5% и больше</ComboBoxItem>
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">По наименованию и описанию</TextBlock>
+            <TextBox Name="SerchTb" TextChanged="SerchTb_TextChanged"  ></TextBox>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" >
             <WrapPanel  x:Name="ServicesWp"/>
         </ScrollViewer>
     </Grid>
