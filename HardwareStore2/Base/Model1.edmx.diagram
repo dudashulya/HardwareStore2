@@ -6,9 +6,9 @@
     <edmx:Diagrams>
       <Diagram DiagramId="b03f01e56f2c451e971764ec27831f9d" Name="Diagram1">
         <EntityTypeShape EntityType="HardwareStoreModel.Feedback" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="HardwareStoreModel.Product" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="HardwareStoreModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="HardwareStoreModel.FK_Feedback_Product" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HardwareStoreModel.Product" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="HardwareStoreModel.FK_Feedback_Product" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

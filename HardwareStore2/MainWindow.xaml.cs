@@ -1,6 +1,7 @@
 ﻿using HardwareStore2.Components;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -25,6 +26,14 @@ namespace HardwareStore2
         public MainWindow()
         {
             InitializeComponent();
+            //создали переменную  но нечему не равна она формата майнвиндоу
+            //var path = @"C:\Users\212112\Desktop\";
+            //foreach (var item in App.db.Product.ToArray())
+            //{
+            //    var fullPath = path + item.MainImagehh;
+            //    item.MainImage = File.ReadAllBytes(fullPath);
+            //}
+            //App.db.SaveChanges(); //запись картинов в байтах в бд, делать перед преобразованием 
             MainFrame.Navigate(new ServicePage());
         }
     }

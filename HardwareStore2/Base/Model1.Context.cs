@@ -26,7 +26,7 @@ namespace HardwareStore2.Base
         }
     
         public virtual DbSet<Feedback> Feedback { get; set; }
-        public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
     }
 }
