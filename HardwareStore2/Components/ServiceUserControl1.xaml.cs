@@ -1,5 +1,6 @@
 ﻿
 using HardwareStore2.Base;
+using HardwareStore2.Base.PartialClass;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -63,7 +64,7 @@ namespace HardwareStore2.Components
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GetNavigationService(this).Navigate(new AddEditproduct( product));
+            Navigate.NextPage(new PageComponents("Редактирование", new AddEditproduct(product)));
         }
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
@@ -75,8 +76,8 @@ namespace HardwareStore2.Components
                 App.db.Product.Remove(product);
                 App.db.SaveChanges();
                 MessageBox.Show("Запись удалена:  " + product.Title);
-                NavigationService.GetNavigationService(this).Navigate(new ServicePage());
-                //Navigation.NextPage(new PageComponents("список услуг", new ServaseListPages()));
+                Navigate.NextPage(new PageComponents("Список услуг", new ServicePage()));
+                
             }
         }
     }

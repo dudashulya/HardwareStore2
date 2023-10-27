@@ -5,18 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HardwareStore2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" MinHeight="960" MinWidth="1500" MaxHeight="960" MaxWidth="1500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60">
-            </RowDefinition> 
+            </RowDefinition>
             <RowDefinition Height="201*"/>
-           
+
         </Grid.RowDefinitions>
         <Rectangle Fill="OrangeRed" Grid.ColumnSpan="2"></Rectangle>
         <TextBlock x:Name="TitleTB" Grid.Column="1" HorizontalAlignment="Center" FontFamily="Arial" 
                    FontSize="30" FontStyle="Italic" Foreground="White" 
                    VerticalAlignment="Center"> Hardware Store</TextBlock>
+        <StackPanel>
+            <Button HorizontalAlignment="Right" Width="60"  x:Name="BackBtn" Click="BackBtn_Click" Background="#FFF7F0F0" Foreground="#FFF20101" >Назад</Button>
+            <Button HorizontalAlignment="Right" Width="60" x:Name="ExitBtn" Click="ExitBtn_Click" Background="#FFF7F0F0" Foreground="#FFF20101">Выход</Button>
+        </StackPanel>
+        
         <Frame  Grid.Row="1" x:Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
 
     </Grid>

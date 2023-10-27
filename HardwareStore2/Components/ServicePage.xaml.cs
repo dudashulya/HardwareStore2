@@ -1,4 +1,5 @@
 ﻿using HardwareStore2.Base;
+using HardwareStore2.Base.PartialClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -104,7 +105,7 @@ namespace HardwareStore2.Components
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddEditproduct(new Product()));
+            Navigate.NextPage(new PageComponents("Добавление товаров", new AddEditproduct(new Product())));
         }
 
        

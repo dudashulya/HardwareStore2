@@ -1,4 +1,5 @@
-﻿using HardwareStore2.Components;
+﻿using HardwareStore2.Base.PartialClass;
+using HardwareStore2.Components;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,6 +28,7 @@ namespace HardwareStore2
         public MainWindow()
         {
             InitializeComponent();
+            Navigate.mainWindow = this;
             //создали переменную  но нечему не равна она формата майнвиндоу
             //var path = @"C:\Users\212112\Desktop\";
             //foreach (var item in App.db.Product.ToArray())
@@ -35,7 +37,20 @@ namespace HardwareStore2
             //    item.MainImage = File.ReadAllBytes(fullPath);
             //}
             //App.db.SaveChanges(); //запись картинов в байтах в бд, делать перед преобразованием 
-            MainFrame.Navigate(new Authorization());
+            Navigate.NextPage(new PageComponents("Hardware Store", new Authorization()));
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            Navigate.BackPage();  
+        }
+
+        private void ExitBtn_Click(object sender, RoutedEventArgs e)
+        {
+                Navigate.ClearHistory();
+                Navigate.NextPage(new PageComponents("Авторизация", new Authorization()));
+            
         }
     }
 }

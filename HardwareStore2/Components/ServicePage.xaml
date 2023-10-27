@@ -35,7 +35,7 @@
         </ScrollViewer>
         <StackPanel Grid.Row="2" HorizontalAlignment="Center" Width="800" >
             <Button Width="150" Height="35"  x:Name="AddBtn" Click="AddBtn_Click" >Добавить</Button>
-            <TextBlock Margin="30 0" x:Name="CountDataTb"></TextBlock>
+            <TextBlock HorizontalAlignment="Center" FontSize="20" Foreground="#FFCD3838" Margin="30 0" x:Name="CountDataTb">Hardware Store</TextBlock>
         </StackPanel>
     </Grid>
 </Page>

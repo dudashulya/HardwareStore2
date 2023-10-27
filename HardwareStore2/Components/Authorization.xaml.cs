@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HardwareStore2.Base.PartialClass;
+using HardwareStore2.Base;
 using HardwareStore2.Components;
 
 namespace HardwareStore2.Components
@@ -37,11 +39,11 @@ namespace HardwareStore2.Components
                 }
                 else
                 {
-                    MessageBox.Show("Здравствуй друг");
-                }
-            
-            NavigationService.Navigate(new ServicePage());    
-            
+                MessageBox.Show("Здравствуй друг");
+            }
+
+            Navigate.NextPage(new PageComponents("Список услуг", new ServicePage()));
+
         }
     }
 }

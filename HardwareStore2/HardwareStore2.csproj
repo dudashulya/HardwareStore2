@@ -121,6 +121,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Base\PartialClass\Navigate.cs" />
     <Compile Include="Base\Product.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
