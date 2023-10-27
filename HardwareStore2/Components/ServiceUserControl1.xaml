@@ -11,15 +11,17 @@
             <Grid.RowDefinitions>
 
                 <RowDefinition Height="8*"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"></RowDefinition>
+               
             </Grid.RowDefinitions>
          
             <Image Height="140"  x:Name="ImageIMG" Source="/Resources/noroot.png"></Image>
             <TextBlock Grid.Row=" 1" x:Name="TttleTB"></TextBlock>
-            
+            <TextBlock Grid.Row=" 1" x:Name="DiskpTB"></TextBlock>
             <StackPanel Grid.Row="2"  Orientation="Horizontal">
                
                 <Image x:Name="StarIMG" Height="20" Source="/Resources/star.png"></Image>
@@ -40,6 +42,10 @@
                 <Image Height="30" Margin="15" x:Name="ReviewsIMG"
                Grid.RowSpan="2" Source="/Resources/reviews.png"></Image>
 
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="5">
+                <Button x:Name="EditBtn" Click="EditBtn_Click" >Редактировать</Button>
+                <Button x:Name="DeleteBtn" Click="DeleteBtn_Click" >Удалить</Button>
             </StackPanel>
         </Grid>
     </Border>

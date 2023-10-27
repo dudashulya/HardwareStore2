@@ -29,8 +29,12 @@ namespace HardwareStore2.Components
             foreach(Product Item in List)
             {
                 ServicesWp.Children.Add(new ServiceUserControl1(Item));
-            } 
-            
+            }
+            if (App.isAdmin == false)
+            {
+                AddBtn.Visibility = Visibility.Hidden;
+            }
+
         }
         private void Refresh()
         {
@@ -98,6 +102,11 @@ namespace HardwareStore2.Components
             Refresh();
         }
 
-        //
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddEditproduct(new Product()));
+        }
+
+       
     }
 }

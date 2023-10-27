@@ -12,6 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"></RowDefinition>
             <RowDefinition Height="90*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <ComboBox Height="40" x:Name="ShortCB" SelectionChanged="ShortCB_SelectionChanged" >
@@ -32,5 +33,9 @@
         <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" >
             <WrapPanel  x:Name="ServicesWp"/>
         </ScrollViewer>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Width="800" >
+            <Button Width="150" Height="35"  x:Name="AddBtn" Click="AddBtn_Click" >Добавить</Button>
+            <TextBlock Margin="30 0" x:Name="CountDataTb"></TextBlock>
+        </StackPanel>
     </Grid>
 </Page>

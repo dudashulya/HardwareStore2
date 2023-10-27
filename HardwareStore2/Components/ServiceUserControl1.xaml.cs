@@ -36,6 +36,12 @@ namespace HardwareStore2.Components
             CostTB.Visibility = product.Visibility;
            
             ImageIMG.Source = GetImageSources(product.MainImage);
+
+            if (App.isAdmin == false)
+            {
+                EditBtn.Visibility = Visibility.Hidden;
+                DeleteBtn.Visibility = Visibility.Hidden;
+            }
         }
 
         private BitmapImage GetImageSources(byte[] byteImage)
@@ -53,6 +59,25 @@ namespace HardwareStore2.Components
             }
             return new BitmapImage(new Uri(@"\Resources\noroot.png", UriKind.Relative));
 
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new AddEditproduct( product));
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (product.Feedback.Count != 0)
+            { MessageBox.Show("Удаление запрещено!"); }
+            else
+            {
+                App.db.Product.Remove(product);
+                App.db.SaveChanges();
+                MessageBox.Show("Запись удалена:  " + product.Title);
+                NavigationService.GetNavigationService(this).Navigate(new ServicePage());
+                //Navigation.NextPage(new PageComponents("список услуг", new ServaseListPages()));
+            }
         }
     }
 }
