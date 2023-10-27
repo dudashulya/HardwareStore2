@@ -15,5 +15,6 @@ namespace HardwareStore2
     public partial class App : Application
     {
         public static HardwareStoreEntities db = new HardwareStoreEntities ();
+        public static bool isAdmin = false;
     }
 }

@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Authorization = HardwareStore2.Components.Authorization;
 
 namespace HardwareStore2
 {
@@ -34,7 +35,7 @@ namespace HardwareStore2
             //    item.MainImage = File.ReadAllBytes(fullPath);
             //}
             //App.db.SaveChanges(); //запись картинов в байтах в бд, делать перед преобразованием 
-            MainFrame.Navigate(new ServicePage());
+            MainFrame.Navigate(new Authorization());
         }
     }
 }

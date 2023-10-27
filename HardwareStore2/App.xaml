@@ -20,5 +20,18 @@
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="FontSize" Value="14"></Setter>
         </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFCC2828" Offset="0.45"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
