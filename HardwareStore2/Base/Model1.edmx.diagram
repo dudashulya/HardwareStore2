@@ -4,11 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b03f01e56f2c451e971764ec27831f9d" Name="Diagram1" ZoomLevel="400">
+      <Diagram DiagramId="b03f01e56f2c451e971764ec27831f9d" Name="Diagram1" ZoomLevel="261">
         <EntityTypeShape EntityType="HardwareStoreModel.Feedback" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="HardwareStoreModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HardwareStoreModel.Product" Width="1.5" PointX="0.75" PointY="0.75" />
         <AssociationConnector Association="HardwareStoreModel.FK_Feedback_Product" />
+        <EntityTypeShape EntityType="HardwareStoreModel.Backet_Product" Width="1.5" PointX="5.25" PointY="2.5" />
+        <AssociationConnector Association="HardwareStoreModel.FK_Backet_Product_Product" />
+        <EntityTypeShape EntityType="HardwareStoreModel.Backet" Width="1.5" PointX="3.375" PointY="5.875" />
+        <AssociationConnector Association="HardwareStoreModel.FK_Backet_Product_Backet" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

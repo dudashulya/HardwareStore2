@@ -9,43 +9,58 @@
       Title="AddEditproduct">
 
     <Grid>
-        <StackPanel HorizontalAlignment="left" Width="200"  VerticalAlignment="Center" Margin="80">
-            <StackPanel>
+        
+            <StackPanel HorizontalAlignment="left" Width="200"  VerticalAlignment="Center" Margin="80">
                 <Border BorderBrush="Black" BorderThickness="3">
                     <Image x:Name="MainImage" Source="{Binding MainImage  }"   Height="110" Width="100"></Image>
                 </Border>
                 <Button x:Name="ChangeImageBtn" Click="ChangeImageBtn_Click"  >Изменить изображение</Button>
             </StackPanel>
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" >
+            <StackPanel x:Name="EditImage" Visibility="Collapsed">
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Width="200"
+                Height="110" x:Name="PhotoList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding PhotoByte}"></Image>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                </ListView>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" >
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock>Индентификатор</TextBlock>
-                <TextBox Text="{Binding ID}"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock>Индентификатор</TextBlock>
+                    <TextBox Text="{Binding ID}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
-                <TextBlock>Название</TextBlock>
-                <TextBox Text="{Binding Title}"></TextBox>
-            </StackPanel>
+                    <TextBlock>Название</TextBlock>
+                    <TextBox Text="{Binding Title}"></TextBox>
+                </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock >Стоимость</TextBlock>
-                <TextBox Text="{Binding Cost}" PreviewTextInput="TextBox_PreviewTextInput" ></TextBox>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock >Стоимость</TextBlock>
+                    <TextBox Text="{Binding Cost}" PreviewTextInput="TextBox_PreviewTextInput" ></TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock>Описание</TextBlock>
+                    <TextBox Text="{Binding Discription}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                    <TextBlock>Скидка</TextBlock>
+                    <TextBox Text="{Binding Discount}" PreviewTextInput="TextBox_PreviewTextInput" ></TextBox>
+                </StackPanel>
+                <StackPanel>
+                    <Button x:Name="SaveBtn" Click="SaveBtn_Click" >сохранить</Button>
+                </StackPanel>
             </StackPanel>
-            
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock>Описание</TextBlock>
-                <TextBox Text="{Binding Discription}"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
-                <TextBlock>Скидка</TextBlock>
-                <TextBox Text="{Binding Discount}" PreviewTextInput="TextBox_PreviewTextInput" ></TextBox>
-            </StackPanel>
-            <StackPanel>
-                <Button x:Name="SaveBtn" Click="SaveBtn_Click" >сохранить</Button>
-            </StackPanel>
-        </StackPanel>
+        
 
     </Grid>
 </Page>

@@ -87,6 +87,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Components\BacketPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Components\ServicePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -102,6 +106,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Base\Backet.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Backet_Product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Base\Feedback.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -134,6 +144,9 @@
     </Compile>
     <Compile Include="Components\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\BacketPage.xaml.cs">
+      <DependentUpon>BacketPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\ServicePage.xaml.cs">
       <DependentUpon>ServicePage.xaml</DependentUpon>

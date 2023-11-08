@@ -5,6 +5,23 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Хранилище HardwareStoreModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Backet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="DateAdd" Type="date" />
+        </EntityType>
+        <EntityType Name="Backet_Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="BacketId" Type="int" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="Count" Type="int" />
+          <Property Name="LastCost" Type="money" />
+        </EntityType>
         <EntityType Name="Feedback">
           <Key>
             <PropertyRef Name="Id" />
@@ -37,6 +54,30 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <Association Name="FK_Backet_Product_Backet">
+          <End Role="Backet" Type="Self.Backet" Multiplicity="0..1" />
+          <End Role="Backet_Product" Type="Self.Backet_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Backet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Backet_Product">
+              <PropertyRef Name="BacketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Backet_Product_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Backet_Product" Type="Self.Backet_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Backet_Product">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Feedback_Product">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
@@ -50,9 +91,19 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Хранилище HardwareStoreModelContainer">
+          <EntitySet Name="Backet" EntityType="Self.Backet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Backet_Product" EntityType="Self.Backet_Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Backet_Product_Backet" Association="Self.FK_Backet_Product_Backet">
+            <End Role="Backet" EntitySet="Backet" />
+            <End Role="Backet_Product" EntitySet="Backet_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Backet_Product_Product" Association="Self.FK_Backet_Product_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Backet_Product" EntitySet="Backet_Product" />
+          </AssociationSet>
           <AssociationSet Name="FK_Feedback_Product" Association="Self.FK_Feedback_Product">
             <End Role="Product" EntitySet="Product" />
             <End Role="Feedback" EntitySet="Feedback" />
@@ -91,6 +142,16 @@
             <End Role="Product" EntitySet="Product" />
             <End Role="Feedback" EntitySet="Feedback" />
           </AssociationSet>
+          <EntitySet Name="Backet_Product" EntityType="HardwareStoreModel.Backet_Product" />
+          <AssociationSet Name="FK_Backet_Product_Product" Association="HardwareStoreModel.FK_Backet_Product_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Backet_Product" EntitySet="Backet_Product" />
+          </AssociationSet>
+          <EntitySet Name="Backet" EntityType="HardwareStoreModel.Backet" />
+          <AssociationSet Name="FK_Backet_Product_Backet" Association="HardwareStoreModel.FK_Backet_Product_Backet">
+            <End Role="Backet" EntitySet="Backet" />
+            <End Role="Backet_Product" EntitySet="Backet_Product" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Product">
           <Key>
@@ -104,6 +165,7 @@
           <Property Name="MainImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="MainImagehh" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Feedback" Relationship="HardwareStoreModel.FK_Feedback_Product" FromRole="Product" ToRole="Feedback" />
+          <NavigationProperty Name="Backet_Product" Relationship="HardwareStoreModel.FK_Backet_Product_Product" FromRole="Product" ToRole="Backet_Product" />
         </EntityType>
         <Association Name="FK_Feedback_Product">
           <End Type="HardwareStoreModel.Product" Role="Product" Multiplicity="1" />
@@ -114,6 +176,50 @@
             </Principal>
             <Dependent Role="Feedback">
               <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Backet_Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="BacketId" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
+          <Property Name="LastCost" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Product" Relationship="HardwareStoreModel.FK_Backet_Product_Product" FromRole="Backet_Product" ToRole="Product" />
+          <NavigationProperty Name="Backet" Relationship="HardwareStoreModel.FK_Backet_Product_Backet" FromRole="Backet_Product" ToRole="Backet" />
+        </EntityType>
+        <Association Name="FK_Backet_Product_Product">
+          <End Type="HardwareStoreModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="HardwareStoreModel.Backet_Product" Role="Backet_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Backet_Product">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Backet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="DateAdd" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Backet_Product" Relationship="HardwareStoreModel.FK_Backet_Product_Backet" FromRole="Backet" ToRole="Backet_Product" />
+        </EntityType>
+        <Association Name="FK_Backet_Product_Backet">
+          <End Type="HardwareStoreModel.Backet" Role="Backet" Multiplicity="0..1" />
+          <End Type="HardwareStoreModel.Backet_Product" Role="Backet_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Backet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Backet_Product">
+              <PropertyRef Name="BacketId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -154,6 +260,25 @@
                 <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Backet_Product">
+            <EntityTypeMapping TypeName="HardwareStoreModel.Backet_Product">
+              <MappingFragment StoreEntitySet="Backet_Product">
+                <ScalarProperty Name="LastCost" ColumnName="LastCost" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="BacketId" ColumnName="BacketId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Backet">
+            <EntityTypeMapping TypeName="HardwareStoreModel.Backet">
+              <MappingFragment StoreEntitySet="Backet">
+                <ScalarProperty Name="DateAdd" ColumnName="DateAdd" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

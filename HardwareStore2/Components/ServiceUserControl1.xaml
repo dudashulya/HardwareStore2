@@ -35,8 +35,10 @@
 
             
             <StackPanel Orientation="Horizontal" Grid.Row="4">
-                <Image Height="30" Margin=" 10" x:Name="BasketIMG"
-               Grid.RowSpan="2" Source="/Resources/basket.png"></Image>
+                <Button x:Name="BacketBtn" Height="30" Margin=" 10" Grid.RowSpan="2" Click="BacketBtn_Click" >
+                    <Image x:Name="BasketIMG"
+              Source="/Resources/basket.png"></Image></Button>
+               
                 <Image Height="30" Margin=" 10"  x:Name="HeartIMG"
                Grid.RowSpan="2" Source="/Resources/heart.png"></Image>
                 <Image Height="30" Margin="15" x:Name="ReviewsIMG"

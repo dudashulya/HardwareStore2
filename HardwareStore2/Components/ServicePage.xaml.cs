@@ -35,6 +35,10 @@ namespace HardwareStore2.Components
             {
                 AddBtn.Visibility = Visibility.Hidden;
             }
+            else
+            {
+                BacketBtn.Visibility = Visibility.Hidden;
+            }
 
         }
         private void Refresh()
@@ -108,6 +112,9 @@ namespace HardwareStore2.Components
             Navigate.NextPage(new PageComponents("Добавление товаров", new AddEditproduct(new Product())));
         }
 
-       
+        private void BacketBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigate.NextPage(new PageComponents("Корзина", new BacketPage()));
+        }
     }
 }

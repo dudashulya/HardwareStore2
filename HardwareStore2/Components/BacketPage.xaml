@@ -1,0 +1,41 @@
+﻿<Page x:Class="HardwareStore2.Components.BacketPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HardwareStore2.Components"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BacketPage">
+
+    <Grid>
+        <StackPanel>
+            <ListView Margin="10 10 10 10" x:Name="BacketList" >
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Width="150" Header="number" x:Name="NumberProduct" DisplayMemberBinding="{Binding Basket_Product.Id}"></GridViewColumn>
+                            <GridViewColumn Width="150px" Header="Наименование товара" DisplayMemberBinding="{Binding Product.Title }"></GridViewColumn>
+                            <GridViewColumn x:Name="priceCloun" Width="150px" Header="Цена" DisplayMemberBinding="{Binding Basket_Product.Cost}"></GridViewColumn>
+                            <GridViewColumn Width="150px" Header="Количество">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBox x:Name="Count" DataContextChanged="Count_DataContextChanged"></TextBox>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+
+                            </GridViewColumn>
+
+                            <GridViewColumn x:Name="FullPrice" Width="150px" Header="Полная стоимость" DisplayMemberBinding="{Binding }"></GridViewColumn>
+
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button x:Name="DeleteBTN" Width="100" Height="20" HorizontalAlignment="Right" Margin="0 0 40 0" Content="Удалить" Click="DeleteBTN_Click" />
+            <Button x:Name="BackBTN" Width="100" Height="20" HorizontalAlignment="Right" Margin="0 10 40 0" Content="Назад" Click="BackBTN_Click" />
+        </StackPanel>
+
+
+    </Grid>
+</Page>

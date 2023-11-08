@@ -80,5 +80,12 @@ namespace HardwareStore2.Components
                 
             }
         }
+
+        private void BacketBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigate.NextPage(new PageComponents("Добавление в корзину ", new BacketPage()));
+            var selBacket = (sender as Button).DataContext as Base.HardwareStoreEntities; App.db.Backet_Product.Add(new Base.Backet_Product() {/* BacketId = selBacket.Title, Count = 1, Product = selBacket.Cost }*/);
+            App.db.SaveChanges();
+        }
     }
 }
