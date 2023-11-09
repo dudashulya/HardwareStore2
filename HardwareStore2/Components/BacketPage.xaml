@@ -10,30 +10,30 @@
 
     <Grid>
         <StackPanel>
-            <ListView Margin="10 10 10 10" x:Name="BacketList" >
+            <ListView Margin="10 10 10 10" x:Name="BacketList" SelectionChanged="BacketList_SelectionChanged" >
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
-                            <GridViewColumn Width="150" Header="number" x:Name="NumberProduct" DisplayMemberBinding="{Binding Basket_Product.Id}"></GridViewColumn>
-                            <GridViewColumn Width="150px" Header="Наименование товара" DisplayMemberBinding="{Binding Product.Title }"></GridViewColumn>
-                            <GridViewColumn x:Name="priceCloun" Width="150px" Header="Цена" DisplayMemberBinding="{Binding Basket_Product.Cost}"></GridViewColumn>
+                            <GridViewColumn Width="150" Header="number" x:Name="NumberProduct" ></GridViewColumn>
+                            <GridViewColumn Width="150px" Header="Наименование товара" DisplayMemberBinding="{Binding Title}"></GridViewColumn>
+                            <GridViewColumn x:Name="priceCloun" Width="150px" Header="Цена" DisplayMemberBinding="{Binding Cost}"></GridViewColumn>
                             <GridViewColumn Width="150px" Header="Количество">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBox x:Name="Count" DataContextChanged="Count_DataContextChanged"></TextBox>
+                                        <TextBox x:Name="Count" TextChanged="Count_TextChanged"></TextBox>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
 
                             </GridViewColumn>
 
-                            <GridViewColumn x:Name="FullPrice" Width="150px" Header="Полная стоимость" DisplayMemberBinding="{Binding }"></GridViewColumn>
+                            <GridViewColumn x:Name="FullPrice" Width="150px" Header="Полная стоимость" DisplayMemberBinding="{Binding FullPrice}"></GridViewColumn>
 
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>
             </ListView>
             <Button x:Name="DeleteBTN" Width="100" Height="20" HorizontalAlignment="Right" Margin="0 0 40 0" Content="Удалить" Click="DeleteBTN_Click" />
-            <Button x:Name="BackBTN" Width="100" Height="20" HorizontalAlignment="Right" Margin="0 10 40 0" Content="Назад" Click="BackBTN_Click" />
+            <Button x:Name="BackBTN" Width="100" Height="20" HorizontalAlignment="Right" Margin="0 10 40 0" Content="Купить" Click="BackBTN_Click" />
         </StackPanel>
 
 

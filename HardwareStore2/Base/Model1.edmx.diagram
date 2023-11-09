@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b03f01e56f2c451e971764ec27831f9d" Name="Diagram1" ZoomLevel="261">
+      <Diagram DiagramId="b03f01e56f2c451e971764ec27831f9d" Name="Diagram1" ZoomLevel="196">
         <EntityTypeShape EntityType="HardwareStoreModel.Feedback" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="HardwareStoreModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HardwareStoreModel.Product" Width="1.5" PointX="0.75" PointY="0.75" />

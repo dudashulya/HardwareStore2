@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows;
+using System.Threading;
 
 namespace HardwareStore2.Base
 {
@@ -34,19 +35,29 @@ namespace HardwareStore2.Base
                 }
 
             }
+
+
             
             public string FeedbackText
         {
             get
             {
                 double sum = 0;
-                foreach(var item in Feedback)
+                foreach (var item in Feedback)
                 {
                     sum = sum + item.Evaluation;
                 }
                 return $"{(sum / Feedback.Count()).ToString("N2")}   {Feedback.Count()} отзыв";
             }
         }
+
+        //public double FullPrice
+        //{
+        //    get
+        //    {
+        //        return Count 
+        //    }
+        //}
 
             
            

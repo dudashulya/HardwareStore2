@@ -34,6 +34,7 @@ namespace HardwareStore2.Components
             if (App.isAdmin == false)
             {
                 AddBtn.Visibility = Visibility.Hidden;
+                ListOrders.Visibility = Visibility.Hidden;
             }
             else
             {
@@ -114,7 +115,12 @@ namespace HardwareStore2.Components
 
         private void BacketBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigate.NextPage(new PageComponents("Корзина", new BacketPage()));
+            Navigate.NextPage(new PageComponents("Корзина", new BacketPage(null)));
+        }
+
+        private void ListOrders_Click(object sender, RoutedEventArgs e)
+        {
+            Navigate.NextPage(new PageComponents("Корзина", new BacketPage(null)));
         }
     }
 }

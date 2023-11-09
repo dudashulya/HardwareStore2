@@ -36,7 +36,9 @@
         <StackPanel Grid.Row="2" HorizontalAlignment="Center" Width="800" >
             <Button Width="100" Height="35"  x:Name="AddBtn" Click="AddBtn_Click" >Добавить</Button>
             <Button Width=" 100" Height="35"  x:Name="BacketBtn" Click="BacketBtn_Click"  >Корзина</Button>
+            
             <TextBlock HorizontalAlignment="Center" FontSize="20" Foreground="#FFCD3838" Margin="30 0" x:Name="CountDataTb">Hardware Store</TextBlock>
         </StackPanel>
+        <Button Grid.Row="2" Width="110" Height="37" x:Name="ListOrders" HorizontalAlignment="Right" Margin="5" Click="ListOrders_Click">Список заказов</Button>
     </Grid>
 </Page>
