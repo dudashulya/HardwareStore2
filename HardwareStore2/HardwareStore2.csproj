@@ -87,7 +87,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Components\BacketPage.xaml">
+    <Page Include="Components\BacketUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\ListZakazPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,8 +149,11 @@
     <Compile Include="Components\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Components\BacketPage.xaml.cs">
-      <DependentUpon>BacketPage.xaml</DependentUpon>
+    <Compile Include="Components\BacketUserControl.xaml.cs">
+      <DependentUpon>BacketUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ListZakazPage.xaml.cs">
+      <DependentUpon>ListZakazPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\ServicePage.xaml.cs">
       <DependentUpon>ServicePage.xaml</DependentUpon>

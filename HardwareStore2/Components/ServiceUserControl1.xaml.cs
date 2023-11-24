@@ -25,15 +25,14 @@ namespace HardwareStore2.Components
     public partial class ServiceUserControl1 : UserControl
     {
         public Product product;
-        public static List<Product> products = new List<Product>();
+       
         public  ServiceUserControl1(Product _product  )
 
         { 
             InitializeComponent();
             product = _product;
             TttleTB.Text = product.Title;
-            CostDiscountTB.Text = product.CostDiscountTB.ToString("N0") + " Р ";
-            CostTB.Text = product.Cost.ToString("N0");
+         
             FeedbackTb.Text = product.FeedbackText;
 
             CostTB.Visibility = product.Visibility;
@@ -85,12 +84,12 @@ namespace HardwareStore2.Components
 
         private void BacketBtn_Click(object sender, RoutedEventArgs e)
         {
-            var selProduct = (sender as Button).DataContext as Product;
-            products.Add(product);
-            Navigate.NextPage(new PageComponents("Добавление в корзину ", new BacketPage(products)));
+            var sel = sender as Button;
+            sel.Visibility = Visibility.Hidden;
+           App.products.Add(product);   
             //var selBacket = (sender as Button).DataContext as Base.HardwareStoreEntities; 
             //App.db.Backet_Product.Add(new Base.Backet_Product() { BacketId = selBacket., Count = 1, Product = selBacket.Cost });
-            App.db.SaveChanges();
+         
         }
     }
 }

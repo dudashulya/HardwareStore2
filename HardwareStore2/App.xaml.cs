@@ -16,5 +16,6 @@ namespace HardwareStore2
     {
         public static HardwareStoreEntities db = new HardwareStoreEntities ();
         public static bool isAdmin = false;
+        public static List<Product> products = new List<Product>();
     }
 }

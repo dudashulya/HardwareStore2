@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="HardwareStore2.Components.BacketUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HardwareStore2.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="600">
+    <Grid>
+        <Border x:Name="MainBorder" BorderBrush="LightGray" BorderThickness="2" Margin="2" Width="600">
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                     
+                </Grid.ColumnDefinitions>
+
+                <Image Width="200"  x:Name="ImageIMG" Source="/Resources/noroot.png"></Image>
+                
+                <TextBlock Grid.Column=" 1" x:Name="TttleTB"></TextBlock>
+                <TextBlock Grid.Column=" 1" x:Name="DiskpTB"></TextBlock>
+                <StackPanel Grid.Column="2"  Orientation="Horizontal">
+
+                </StackPanel>
+                <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                    <TextBlock  x:Name="CostDiscountTB"></TextBlock>
+                    <TextBlock  x:Name="CostTB" TextDecorations="Strikethrough"></TextBlock>
+                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal" >
+                         <Button Height="15" Width="15" HorizontalAlignment="Left" x:Name="PlusBtn" VerticalAlignment="Center" Click="PlusBtn_Click" >+</Button>
+                        <TextBox Height="20" Text="1" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="CountProductTb" IsEnabled="False"></TextBox>
+                     <Button Height="15" Width="15" HorizontalAlignment="Right" x:Name="MinusBtn" VerticalAlignment="Center" Click="MinusBtn_Click">-</Button>
+                        
+                    </StackPanel>
+                    <TextBlock x:Name="LastCost"> </TextBlock>
+                    
+                    
+                </StackPanel>
+
+              
+                <StackPanel Orientation="Horizontal" Grid.Column="3">
+                    
+                    <Button x:Name="BACKETDeleteBtn"  Width="70" Height="50"  HorizontalAlignment="Center" Margin="5" Click="BACKETDeleteBtn_Click">Удалить</Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

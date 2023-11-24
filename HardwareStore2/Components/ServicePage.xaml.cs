@@ -115,12 +115,12 @@ namespace HardwareStore2.Components
 
         private void BacketBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigate.NextPage(new PageComponents("Корзина", new BacketPage(null)));
+            Navigate.NextPage(new PageComponents("Корзина", new ListZakazPage()));
         }
 
         private void ListOrders_Click(object sender, RoutedEventArgs e)
         {
-            Navigate.NextPage(new PageComponents("Корзина", new BacketPage(null)));
+            
         }
     }
 }
