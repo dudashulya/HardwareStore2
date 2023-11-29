@@ -25,9 +25,18 @@ namespace HardwareStore2.Components
         {
             InitializeComponent();
             Refresh();
-        
-        
+
         }
+
+        //private void Updateit()
+        //{
+        //    decimal price = 0;
+        //    foreach (Product products in Product)
+        //    {
+        //        price += products.Cost;
+        //    }
+        //    itogTB.Text = price.ToString();
+        //}
         private void Refresh()
         {
           

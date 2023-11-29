@@ -32,7 +32,8 @@ namespace HardwareStore2.Components
             TttleTB.Text = product.Title;
             CostDiscountTB.Text = product.CostDiscountTB.ToString("N0") + " Р ";
             CostTB.Text = product.Cost.ToString("N0");
-            LastCost.Text = product.CostDiscountTB.ToString();  
+            LastCost.Text = product.CostDiscountTB.ToString();
+            ImageIMG.Source = GetImageSources(product.MainImage);
 
 
         }

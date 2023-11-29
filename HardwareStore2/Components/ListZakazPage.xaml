@@ -9,6 +9,12 @@
       Title="ListZakazPage">
 
     <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+         <TextBlock Height="50" Grid.Row="1" >итого</TextBlock>
+        <TextBox x:Name="itogTB"></TextBox>
+            
+        </StackPanel>
+       
         <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" >
             <WrapPanel  x:Name="ServicesWp"/>
         </ScrollViewer>
