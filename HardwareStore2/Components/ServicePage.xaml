@@ -33,7 +33,7 @@
         <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" >
             <WrapPanel  x:Name="ServicesWp"/>
         </ScrollViewer>
-        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Width="800" >
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Width="800"  Orientation="Horizontal">
             <Button Width="100" Height="35"  x:Name="AddBtn" Click="AddBtn_Click" >Добавить</Button>
             <Button Width=" 100" Height="35"  x:Name="BacketBtn" Click="BacketBtn_Click"  >Корзина</Button>
             

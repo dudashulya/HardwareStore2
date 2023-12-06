@@ -25,7 +25,6 @@ namespace HardwareStore2.Components
         {
             InitializeComponent();
             Refresh();
-
         }
 
         //private void Updateit()
@@ -47,7 +46,18 @@ namespace HardwareStore2.Components
 
             }
 
+        }
 
+        private void ZakazListBtn_Click(object sender, RoutedEventArgs e)
+        {
+            decimal Sum = 0;
+            foreach(var item in App.db.Backet_Product.Where(x => x.BacketId == App.backet.Id))
+            {
+                Sum += Convert.ToDecimal(item.LastCost);
+            }
+            MessageBox.Show($"{Sum}");
+            MessageBox.Show("Сохранено");
+            NavigationService.Navigate(new ServicePage());
         }
     }
 }

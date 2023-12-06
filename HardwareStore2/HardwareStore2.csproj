@@ -83,6 +83,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Components\AdminListPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Components\Authorization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +149,9 @@
     <Compile Include="Base\PartialClass\Product.cs" />
     <Compile Include="Components\AddEditproduct.xaml.cs">
       <DependentUpon>AddEditproduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\AdminListPage1.xaml.cs">
+      <DependentUpon>AdminListPage1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>

@@ -35,8 +35,11 @@ namespace HardwareStore2.Components
          
             FeedbackTb.Text = product.FeedbackText;
 
-            CostTB.Visibility = product.Visibility;
-           
+            CostDiscountTB.Text = product.CostDiscountTB.ToString("N0") + " Р ";
+            CostTB.Text = product.Cost.ToString("N0");
+            //CostTB.Visibility = product.Visibility;
+            //CostDiscountTB.Visibility = product.Visibility;
+
             ImageIMG.Source = GetImageSources(product.MainImage);
 
             if (App.isAdmin == false)
@@ -86,10 +89,19 @@ namespace HardwareStore2.Components
         {
             var sel = sender as Button;
             sel.Visibility = Visibility.Hidden;
-           App.products.Add(product);   
-            //var selBacket = (sender as Button).DataContext as Base.HardwareStoreEntities; 
-            //App.db.Backet_Product.Add(new Base.Backet_Product() { BacketId = selBacket., Count = 1, Product = selBacket.Cost });
-         
+           App.products.Add(product);
+            //var selBacket = (sender as Button).DataContext as Base.HardwareStoreEntities;
+            //App.db.Backet_Product.Add(new Base.Backet_Product() 
+            //{ 
+            //});
+            Backet_Product bac = new Backet_Product();
+            bac.BacketId = App.backet.Id;
+            bac.ProductId = product.Id;
+            bac.Count = 1;
+            bac.LastCost = product.Cost;
+            App.db.Backet_Product.Add(bac);
+            App.db.SaveChanges();
+
         }
     }
 }

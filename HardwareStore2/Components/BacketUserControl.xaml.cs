@@ -25,10 +25,14 @@ namespace HardwareStore2.Components
     {
         public Product product;
         public static List<Product> products = new List<Product>();
+        Backet_Product pro1;
         public BacketUserControl(Product _product)
         {
             InitializeComponent();
             product = _product;
+            Backet_Product pro = (App.db.Backet_Product.FirstOrDefault(x => x.BacketId == App.backet.Id && x.ProductId == product.Id) as Backet_Product);
+            this.DataContext = pro;
+            pro1 = pro;
             TttleTB.Text = product.Title;
             CostDiscountTB.Text = product.CostDiscountTB.ToString("N0") + " Р ";
             CostTB.Text = product.Cost.ToString("N0");
@@ -68,11 +72,11 @@ namespace HardwareStore2.Components
 
         private void PlusBtn_Click(object sender, RoutedEventArgs e)
         {
-           
-
-
+            pro1.Count += 1;
             CountProductTb.Text = (Convert.ToInt32(CountProductTb.Text) + 1).ToString();
             LastCost.Text = (Convert.ToInt32(CountProductTb.Text) * product.CostDiscountTB).ToString();
+            pro1.LastCost = (Convert.ToInt32(CountProductTb.Text) * product.CostDiscountTB);
+            App.db.SaveChanges();
         }
 
         private void MinusBtn_Click(object sender, RoutedEventArgs e)
@@ -82,9 +86,11 @@ namespace HardwareStore2.Components
             {
                 return;
             }
-            
+            pro1.Count -= 1;
             CountProductTb.Text = (Convert.ToInt32(CountProductTb.Text) - 1).ToString();
            LastCost.Text = (Convert.ToInt32(CountProductTb.Text) * product.CostDiscountTB).ToString();
+            pro1.LastCost = (Convert.ToInt32(CountProductTb.Text) * product.CostDiscountTB);
+            App.db.SaveChanges();
         }
     }
 }

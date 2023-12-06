@@ -9,14 +9,14 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DateAdd" Type="date" />
         </EntityType>
         <EntityType Name="Backet_Product">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="BacketId" Type="int" />
           <Property Name="ProductId" Type="int" />
           <Property Name="Count" Type="int" />

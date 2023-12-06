@@ -17,5 +17,7 @@ namespace HardwareStore2
         public static HardwareStoreEntities db = new HardwareStoreEntities ();
         public static bool isAdmin = false;
         public static List<Product> products = new List<Product>();
+        public static Backet backet;
+        public static decimal PricePro = 0;
     }
 }

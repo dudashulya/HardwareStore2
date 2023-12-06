@@ -30,7 +30,7 @@
                     <TextBlock  x:Name="CostTB" TextDecorations="Strikethrough"></TextBlock>
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal" >
                          <Button Height="15" Width="15" HorizontalAlignment="Left" x:Name="PlusBtn" VerticalAlignment="Center" Click="PlusBtn_Click" >+</Button>
-                        <TextBox Height="20" Text="1" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="CountProductTb" IsEnabled="False"></TextBox>
+                        <TextBox Height="20" Text="{Binding Count}" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="CountProductTb" IsEnabled="False"></TextBox>
                      <Button Height="15" Width="15" HorizontalAlignment="Right" x:Name="MinusBtn" VerticalAlignment="Center" Click="MinusBtn_Click">-</Button>
                         
                     </StackPanel>

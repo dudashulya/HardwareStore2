@@ -40,6 +40,11 @@ namespace HardwareStore2.Components
             {
                 BacketBtn.Visibility = Visibility.Hidden;
             }
+            Backet backet = new Backet();
+            App.backet = backet;
+            App.db.Backet.Add(backet);
+            App.db.SaveChanges();
+
 
         }
         private void Refresh()
@@ -120,7 +125,7 @@ namespace HardwareStore2.Components
 
         private void ListOrders_Click(object sender, RoutedEventArgs e)
         {
-            
+            Navigate.NextPage(new PageComponents("Корзина", new AdminListPage1()));
         }
     }
 }
